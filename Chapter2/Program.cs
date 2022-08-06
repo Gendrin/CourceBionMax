@@ -1,4 +1,10 @@
-﻿/*Практическое задание "Профиль пользователя"
+﻿DZ1();
+DZ2();
+DZ3();
+
+static void DZ3()
+{
+    /*Практическое задание "Профиль пользователя"
 Запросить у пользователя: фамилию, имя, возраст, вес, рост.
 
 Рассчитать ИМТ(индекс массы тела) по формуле ИМТ = вес (кг) / (рост(м) * рост(м))
@@ -12,45 +18,45 @@ Height: рост
 Body Mass Index: ИМТ
 
 Вывести сформированную строку на консоль.*/
-string? fio,ages,weights,heights,profile="You profile:";
-int age;
-double weight, height;
-Console.WriteLine("Формируем ваш профайл:");
-Console.WriteLine("Введите фамилию и имя:");
+    string? fio, ages, weights, heights, profile = "You profile:";
+    int age;
+    double weight, height;
+    Console.WriteLine("Формируем ваш профайл:");
+    Console.WriteLine("Введите фамилию и имя:");
 
-fio=Console.ReadLine();
-if (string.IsNullOrWhiteSpace(fio)) Console.WriteLine("Значение не введено!");
-else
-{
-    Console.WriteLine("Введите ваш возраст (целое):");
-    ages=Console.ReadLine();
-    if (string.IsNullOrWhiteSpace(ages)) Console.WriteLine("Значение не введено!");
+    fio = Console.ReadLine();
+    if (string.IsNullOrWhiteSpace(fio)) Console.WriteLine("Значение не введено!");
     else
     {
-        age=int.Parse(ages);
-        Console.WriteLine("Введите ваш вec (можно дробное):");
-        weights = Console.ReadLine();
-        if (string.IsNullOrWhiteSpace(weights)) Console.WriteLine("Значение не введено!");
+        Console.WriteLine("Введите ваш возраст (целое):");
+        ages = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(ages)) Console.WriteLine("Значение не введено!");
         else
         {
-            weight = Double.Parse(weights);
-            Console.WriteLine("Введите ваш рост в метрах (дробное):");
-            heights = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(heights)) Console.WriteLine("Значение не введено!");
+            age = int.Parse(ages);
+            Console.WriteLine("Введите ваш вec (можно дробное):");
+            weights = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(weights)) Console.WriteLine("Значение не введено!");
             else
             {
-                height = Double.Parse(heights);
-                Console.WriteLine($"{profile}{Environment.NewLine}Full Name:{fio}{Environment.NewLine}" +
-                $"Age: {age}{Environment.NewLine}" +
-                $"Weight: {weight}{Environment.NewLine}" +
-                $"Height: {height}{Environment.NewLine}" +
-                $"Body Mass Index: {weight/(height*height)}");
-                
+                weight = Double.Parse(weights);
+                Console.WriteLine("Введите ваш рост в метрах (дробное):");
+                heights = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(heights)) Console.WriteLine("Значение не введено!");
+                else
+                {
+                    height = Double.Parse(heights);
+                    Console.WriteLine($"{profile}{Environment.NewLine}Full Name:{fio}{Environment.NewLine}" +
+                    $"Age: {age}{Environment.NewLine}" +
+                    $"Weight: {weight}{Environment.NewLine}" +
+                    $"Height: {height}{Environment.NewLine}" +
+                    $"Body Mass Index: {weight / (height * height)}");
+
+                }
             }
         }
     }
 }
-
 static void DZ2()
 {
    /*Запросить у пользователя длины трёх сторон треугольника. Длины могут быть представлены дробными значениями.
